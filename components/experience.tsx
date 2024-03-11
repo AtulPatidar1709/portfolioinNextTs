@@ -61,7 +61,7 @@ export default function Experience() {
           </VerticalTimeline>
         </div>
         <div>
-          <SectionHeading>My experience</SectionHeading>
+          <SectionHeading>My Certificates</SectionHeading>
           <VerticalTimeline layout = {'1-column-left'} lineColor="">
             {CertificatesData.map((item, index) => (
               <React.Fragment key={index}>
