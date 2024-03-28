@@ -15,7 +15,7 @@
 # production
 /build
 
-#Env
+# Environment variables
 .env
 
 # misc
