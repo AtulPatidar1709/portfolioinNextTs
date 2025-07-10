@@ -1,0 +1,375 @@
+@import url("https://use.typekit.net/gjb5lfx.css");
+/*****************************************
+Table Of Contents:
+  - Core Setup
+  - Base Styles
+  - Landing Page
+  - Form
+******************************************/
+
+/**********************/
+/*     Core Setup     */
+/**********************/
+.mask-fade {
+  -webkit-mask-image: linear-gradient(to bottom, black 30%, transparent 90%);
+  mask-image: linear-gradient(to bottom, black 30%, transparent 90%);
+}
+
+.mask-fade-large {
+  -webkit-mask-image: linear-gradient(to bottom, black 60%, transparent 90%);
+  mask-image: linear-gradient(to bottom, black 60%, transparent 90%);
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+@layer base {
+  * {
+    @apply antialiased appearance-none scroll-smooth;
+  }
+  body {
+    @apply bg-neutral-900 m-0 p-0;
+  }
+}
+
+/**********************/
+/*     Typography     */
+/**********************/
+@layer base {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-display text-lightest font-black mb-2
+    transition-all duration-150 tracking-tight leading-relaxed;
+  }
+  h1 {
+    @apply text-3xl md:text-5xl;
+  }
+  h2 {
+    @apply text-2xl md:text-4xl;
+  }
+  h3 {
+    @apply text-xl md:text-3xl;
+  }
+  h4 {
+    @apply text-base md:text-2xl;
+  }
+  h5 {
+    @apply text-sm md:text-xl;
+  }
+  h6 {
+    @apply font-bold text-xs md:text-base;
+  }
+  p {
+    @apply font-body font-semibold text-light text-base leading-relaxed tracking-normal;
+  }
+  a {
+    @apply font-bold text-accent hover:text-lightest;
+  }
+  hr {
+    @apply border-lightest/20 mix-blend-overlay;
+  }
+  li {
+    @apply pl-0 font-semibold text-light text-base;
+  }
+}
+
+/**********************/
+/*      Buttons      */
+/**********************/
+@layer components {
+  .btn {
+    @apply font-display font-bold px-4 py-2 rounded-md
+    transition-all duration-150;
+  }
+
+  .btn-grid-item {
+    @apply border border-neutral-800 text-white
+    hover:bg-neutral-800 hover:border-neutral-700;
+  }
+
+  .btn-primary {
+    @apply bg-accent text-white
+    hover:bg-accent/90;
+  }
+
+  .btn-outline {
+    @apply border border-accent text-accent
+    hover:bg-accent hover:text-white;
+  }
+
+  .btn-ghost {
+    @apply text-white bg-white/10
+    hover:bg-white/20;
+  }
+}
+
+@layer components {
+  .social-icon-wrapper {
+    @apply flex justify-center items-center bg-dark/30 shadow-sm hover:shadow-lg p-3 rounded-full w-10 h-10 transition-all hover:-translate-y-0.5 duration-150 overflow-hidden ease-in-out;
+  }
+
+  .tech-stack-wrapper {
+    @apply flex justify-center items-center bg-dark/30 shadow-sm hover:shadow-lg p-3.5 rounded-full w-14 h-14 transition-all hover:-translate-y-0.5 duration-150 overflow-hidden ease-in-out;
+  }
+
+  .project-link-icon-wrapper {
+    @apply group-hover:bg-white flex justify-center items-center bg-transparent group-hover:shadow-lg rounded-full w-8 h-8 overflow-hidden text-white transition-all duration-150 ease-in-out;
+  }
+
+  .nav-pill {
+    @apply top-8 bg-dark/30 backdrop-blur-lg border border-lightest/10 
+    rounded-full px-6 py-3 z-50 flex gap-x-6 shadow-lg;
+  }
+
+  .nav-link {
+    @apply font-semibold text-lightest/50 hover:text-lightest text-sm 
+    transition-colors duration-150 relative;
+  }
+
+  .nav-link.active {
+    @apply text-accent;
+  }
+
+  .nav-link.active::after {
+    @apply content-[''] absolute -bottom-1 left-0 w-full h-0.5 
+    bg-accent rounded-full;
+  }
+}
+
+/* Base styles for code blocks */
+pre {
+  padding: 0rem !important;
+  overflow-x: auto !important;
+  margin: 0.5rem 0 !important;
+  position: relative !important;
+}
+
+.copy-button {
+  @apply z-10;
+}
+
+/* Ensure code text is visible */
+code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+    "Liberation Mono", "Courier New", monospace !important;
+  font-size: 0.875rem !important;
+  line-height: 1.7 !important;
+}
+
+/* Prism.js theme customization */
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+  color: #6a9955 !important;
+}
+
+.token.punctuation {
+  color: #d4d4d4 !important;
+}
+
+.token.property,
+.token.tag,
+.token.boolean,
+.token.number,
+.token.constant,
+.token.symbol,
+.token.deleted {
+  color: #b5cea8 !important;
+}
+
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin,
+.token.inserted {
+  color: #ce9178 !important;
+}
+
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string {
+  color: #d4d4d4 !important;
+}
+
+.token.atrule,
+.token.attr-value,
+.token.keyword {
+  color: #569cd6 !important;
+}
+
+.token.function {
+  color: #dcdcaa !important;
+}
+
+.token.regex,
+.token.important,
+.token.variable {
+  color: #d16969 !important;
+}
+
+/* Style inline code differently */
+:not(pre) > code {
+  background-color: rgba(64, 71, 86, 0.5) !important;
+  padding: 0.2em 0.4em !important;
+  border-radius: 0.25rem !important;
+  font-size: 0.875em !important;
+}
+
+blockquote {
+  @apply py-2 pl-4 border-accent border-l-2 bg-dark/10;
+}
+
+/* Optional: Add a nice scrollbar for code blocks */
+pre::-webkit-scrollbar {
+  height: 8px;
+}
+
+pre::-webkit-scrollbar-track {
+  background: #2d2d2d;
+}
+
+pre::-webkit-scrollbar-thumb {
+  background: #666;
+  border-radius: 4px;
+}
+
+.hljs {
+  background-color: transparent !important;
+  background: transparent !important;
+  overflow: hidden;
+  position: relative;
+  border: 1px solid rgba(85, 160, 255, 0.3) !important;
+  border-radius: 0.5rem !important;
+}
+
+/* We can use the pseudo-element for the overlay effect */
+.hljs::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(85, 160, 255, 0.05) !important;
+  mix-blend-mode: overlay;
+  z-index: 1;
+  pointer-events: none;
+}
+
+#blog ul {
+  @apply list-disc list-inside;
+}
+
+#blog ul li {
+  @apply pl-0 font-semibold text-base leading-relaxed list-disc list-inside;
+}
+
+#blog a {
+  @apply text-accent hover:text-white transition-all duration-150 ease-in-out;
+}
+
+pre.code-block {
+  position: relative;
+  margin: 1.5em 0;
+  padding: 1.5em;
+  border-radius: 0.375rem;
+  overflow-x: auto;
+}
+
+pre.code-block code {
+  display: block;
+  min-width: 100%;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+    "Liberation Mono", "Courier New", monospace;
+  font-size: 0.875rem;
+  line-height: 1.7142857;
+}
+
+pre.code-block [data-line] {
+  padding: 0 1.5em;
+}
+
+/* Syntax highlighting */
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+  color: #565f89;
+}
+
+.token.punctuation {
+  color: #c0caf5;
+}
+
+.token.namespace {
+  opacity: 0.7;
+}
+
+.token.property,
+.token.tag,
+.token.boolean,
+.token.number,
+.token.constant,
+.token.symbol {
+  color: #7aa2f7;
+}
+
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin {
+  color: #9ece6a;
+}
+
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.token.variable,
+.token.inserted {
+  color: #73daca;
+}
+
+.token.atrule,
+.token.attr-value,
+.token.keyword {
+  color: #bb9af7;
+}
+
+.token.regex,
+.token.important {
+  color: #ff9e64;
+}
+
+.token.important,
+.token.bold {
+  font-weight: bold;
+}
+
+.token.italic {
+  font-style: italic;
+}
+
+.token.entity {
+  cursor: help;
+}
+
+.token.deleted {
+  color: #f7768e;
+}
