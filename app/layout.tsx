@@ -23,6 +23,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <meta name="google-site-verification" content="7Nd6kI90fo2ZHojVwOhZrgOmYzBOzqHzn9wd1AL20l0" />
+      </head>
       <body className="relative bg-darkest">
         <div className="-right-[28rem] -bottom-[28rem] fixed bg-accent/20 blur-[100px] rounded-full w-[48rem] h-[48rem]"></div>
         <div className="-top-[28rem] -left-[28rem] fixed bg-accent/20 blur-[100px] rounded-full w-[48rem] h-[48rem]"></div>
