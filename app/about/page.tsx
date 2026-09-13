@@ -43,9 +43,6 @@ export default function AboutPage() {
             <a href="/resume.pdf" className={btnPrimary}>Download resume (PDF)</a>
             <Link href="/contact" className={btnOutline}>Start a project</Link>
           </div>
-          <p className="mt-3.5 text-[13px] text-[var(--ink-soft)]">
-            Add your resume file at <code>/public/resume.pdf</code> so this button links to it directly.
-          </p>
         </div>
       </section>
 
