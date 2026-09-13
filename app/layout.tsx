@@ -72,6 +72,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }}
         />
+        <meta name="google-site-verification" content="7Nd6kI90fo2ZHojVwOhZrgOmYzBOzqHzn9wd1AL20l0" />
       </head>
       <body className="bg-[var(--bg)] font-sans text-[var(--ink)] antialiased transition-colors duration-200">
         <a
